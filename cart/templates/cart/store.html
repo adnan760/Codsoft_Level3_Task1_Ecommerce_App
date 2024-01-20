@@ -1,0 +1,27 @@
+{% extends 'cart/base.html' %}
+
+{% block content %}
+
+<div class = 'container'>
+    <div class = 'row'>
+      
+        {% for product in products %}
+        <div class = 'col-md-4 col-lg-4' style="width: 350px; margin-inline: 40px;">
+          <div class="card" style="border-color: gray;border-style: groove;" >
+              <img src=" {{product.image.url }}" class="card-img-top" alt="..." style="width:350px ; height:300px ; ">
+              <div class="card-body" style="background-color: beige;">
+                <h3 class="card-title">{{product.name}}</h3>
+                <h4 class="card-text">$ {{product.price}}</h4>
+                <a  class="btn btn-primary addtocart" data-action = 'add' data-product= "{{product.product_id}}">Add to Cart</a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}  
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
